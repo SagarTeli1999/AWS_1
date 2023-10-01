@@ -1,0 +1,31 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+   <style>
+       #s1 {color:blue}
+   </style>
+   <script>                              //here ONCHANGE() EVENT START
+function validatename(){
+var name=document.getElementById("uname").value;         //This is field-level validation where validation can done by field by field so before i can move into the password field it will validate the username field-level form for me.(it means that time it shows msg like "namecantbelessthan5char")
+    if(name.length<5){                                   //if u r not giving chance to user to enter the values that leads to field level validation.
+document.getElementById("s1").innerHTML="Name cannot be less 5 chars"
+document.getElementById("uname").focus();
+document.getElementById("uname").select();
+    }
+    else{
+        document.getElementById("s1").innerHTML=""
+    }
+}
+   </script>
+</head>
+<body>
+    <h1>Welcome to Javascript</h1>
+    <form>
+        username:<input type="text" id="uname" name="uname" onchange="validatename()"><span id="s1"></span><p> 
+            password:<input type="text" id="pass" name="pass"><span id="s2"></span><p>
+    <input type="submit" value="Login">
+    </form>
+
+    Hello<span id="p1"></span>
+</body>
+</html>
